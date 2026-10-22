@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificado ISO 9001:2015 | Banco de Sangre Esparta</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        esparta: {
+                            rojo: '#b3141c',
+                            rojoclaro: '#d6232b',
+                            dorado: '#d4a843',
+                        }
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.4s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+        }
+        .certificate-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .certificate-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+        .tab-indicator {
+            position: relative;
+            overflow: hidden;
+        }
+        .tab-indicator::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #b3141c, #d6232b);
+            border-radius: 3px;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        .tab-indicator.active::after {
+            transform: translateX(0);
+        }
+        .info-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 6px 12px;
+            background: rgba(179, 20, 28, 0.1);
+            border: 1px solid rgba(179, 20, 28, 0.2);
+            border-radius: 20px;
+            font-size: 0.875rem;
+            color: #b3141c;
+        }
+        .header-gradient {
+            background: linear-gradient(135deg, #b3141c 0%, #d6232b 50%, #e5484d 100%);
+        }
+        .gold-accent {
+            color: #d4a843;
+        }
+        .bg-gold-light {
+            background-color: rgba(212, 168, 67, 0.1);
+        }
+        .border-gold {
+            border-color: #d4a843;
+        }
+        .cert-badge {
+            background: linear-gradient(135deg, #d4a843 0%, #b8922f 100%);
+            color: #b3141c;
+        }
+        .esparta-icon {
+            background: linear-gradient(135deg, #b3141c, #d6232b);
+        }
+        .scope-list li i {
+            color: #d6232b;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-red-50 font-sans">
+    <div class="min-h-screen p-4 md:p-6">
+        <!-- Header con efecto glass -->
+        <div class="glass-effect rounded-2xl shadow-lg p-4 md:p-6 mb-6 animate-fade-in">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                <div>
+                    <nav class="flex items-center text-sm text-gray-600 mb-2">
+<span class="text-esparta-rojo font-medium">Certificado ISO 9001</span>
+                    </nav>
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-900">
+                        <span class="bg-gradient-to-r from-esparta-rojo to-esparta-rojoclaro bg-clip-text text-transparent">
+                            Certificado ISO 9001:2015
+                        </span>
+                    </h1>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <span class="info-chip">
+                        <i class="fas fa-shield-check text-esparta-rojo mr-2"></i>
+                        Certificado Vigente
+                    </span>
+                </div>
+            </div>
+            <p class="text-gray-600 text-lg">Banco de Sangre Esparta cuenta con la certificación internacional ISO 9001:2015 para el procesamiento de componentes sanguíneos, desde la atención al donante hasta el despacho.</p>
+        </div>
+
+        <!-- Tarjeta principal del certificado -->
+        <div class="glass-effect rounded-2xl shadow-xl overflow-hidden mb-8 animate-slide-up">
+            <!-- Navegación con tabs: sede y idioma -->
+            <div class="border-b border-gray-200 bg-gradient-to-r from-gray-50 to-primary-50/30">
+                <div class="flex flex-wrap">
+                    <button id="tab-santiago-es" class="tab-indicator active text-esparta-rojo flex-1 py-3 px-3 text-center font-semibold transition-colors flex items-center justify-center" onclick="changeCertTab('santiago-es')">
+                        <i class="fas fa-flag mr-2 text-base"></i><span class="text-sm md:text-base">Santiago · Español</span>
+                    </button>
+                    <button id="tab-santiago-en" class="tab-indicator text-gray-700 hover:text-esparta-rojo flex-1 py-3 px-3 text-center font-semibold transition-colors flex items-center justify-center" onclick="changeCertTab('santiago-en')">
+                        <i class="fas fa-language mr-2 text-base"></i><span class="text-sm md:text-base">Santiago · English</span>
+                    </button>
+                    <button id="tab-laromana-es" class="tab-indicator text-gray-700 hover:text-esparta-rojo flex-1 py-3 px-3 text-center font-semibold transition-colors flex items-center justify-center" onclick="changeCertTab('laromana-es')">
+                        <i class="fas fa-flag mr-2 text-base"></i><span class="text-sm md:text-base">La Romana · Español</span>
+                    </button>
+                    <button id="tab-laromana-en" class="tab-indicator text-gray-700 hover:text-esparta-rojo flex-1 py-3 px-3 text-center font-semibold transition-colors flex items-center justify-center" onclick="changeCertTab('laromana-en')">
+                        <i class="fas fa-language mr-2 text-base"></i><span class="text-sm md:text-base">La Romana · English</span>
+                    </button>
+                    <button id="tab-rec-santiago-es" class="tab-indicator text-gray-700 hover:text-esparta-rojo flex-1 py-3 px-3 text-center font-semibold transition-colors flex items-center justify-center" onclick="changeCertTab('rec-santiago-es')">
+                        <i class="fas fa-award mr-2 text-base"></i><span class="text-sm md:text-base">Santiago · Reconocimiento ES</span>
+                    </button>
+                    <button id="tab-rec-santiago-en" class="tab-indicator text-gray-700 hover:text-esparta-rojo flex-1 py-3 px-3 text-center font-semibold transition-colors flex items-center justify-center" onclick="changeCertTab('rec-santiago-en')">
+                        <i class="fas fa-award mr-2 text-base"></i><span class="text-sm md:text-base">Santiago · Reconocimiento EN</span>
+                    </button>
+                    <button id="tab-rec-laromana-es" class="tab-indicator text-gray-700 hover:text-esparta-rojo flex-1 py-3 px-3 text-center font-semibold transition-colors flex items-center justify-center" onclick="changeCertTab('rec-laromana-es')">
+                        <i class="fas fa-award mr-2 text-base"></i><span class="text-sm md:text-base">La Romana · Reconocimiento ES</span>
+                    </button>
+                    <button id="tab-rec-laromana-en" class="tab-indicator text-gray-700 hover:text-esparta-rojo flex-1 py-3 px-3 text-center font-semibold transition-colors flex items-center justify-center" onclick="changeCertTab('rec-laromana-en')">
+                        <i class="fas fa-award mr-2 text-base"></i><span class="text-sm md:text-base">La Romana · Reconocimiento EN</span>
+                    </button>
+                    <button id="tab-imp-santiago" class="tab-indicator text-gray-700 hover:text-esparta-rojo flex-1 py-3 px-3 text-center font-semibold transition-colors flex items-center justify-center" onclick="changeCertTab('imp-santiago')">
+                        <i class="fas fa-medal mr-2 text-base"></i><span class="text-sm md:text-base">Santiago · Implementación</span>
+                    </button>
+                    <button id="tab-imp-laromana" class="tab-indicator text-gray-700 hover:text-esparta-rojo flex-1 py-3 px-3 text-center font-semibold transition-colors flex items-center justify-center" onclick="changeCertTab('imp-laromana')">
+                        <i class="fas fa-medal mr-2 text-base"></i><span class="text-sm md:text-base">La Romana · Implementación</span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="content-santiago-es" class="tab-content p-6 md:p-8">
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="w-14 h-14 rounded-xl esparta-icon flex items-center justify-center mr-4 shadow-lg">
+                                    <i class="fas fa-droplet text-white text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="text-2xl font-bold text-gray-900">Certificado ISO 9001:2015</h2>
+                                    <p class="text-gray-600">Sistema de Gestión de la Calidad · Santiago de los Caballeros</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 md:mt-0">
+                            <span class="info-chip"><i class="fas fa-calendar-check mr-2"></i>Válido hasta: 14.10.2029</span>
+                            <span class="info-chip"><i class="fas fa-hashtag mr-2"></i>SIS1171026Q072</span>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-6">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-building text-esparta-rojo mr-2"></i>Empresa Certificada
+                                </h3>
+                                <p class="text-2xl font-bold text-esparta-rojo mb-2">Banco de Sangre Esparta</p>
+                                <div class="space-y-2 text-gray-600">
+                                    <p class="flex items-start"><i class="fas fa-map-marker-alt text-gray-400 mr-2 w-5"></i><span>Sede 1 – Calle Pedro Francisco Bonó 60, Santiago de los Caballeros, República Dominicana</span></p>
+                                    <p class="flex items-start"><i class="fas fa-map-marker-alt text-gray-400 mr-2 w-5"></i><span>Sede 2 – Avenida Las Carreras, Edificio M59, Santiago de los Caballeros, República Dominicana</span></p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-bullseye text-esparta-rojo mr-2"></i>Alcance del Certificado
+                                </h3>
+                                <p class="text-gray-700 leading-relaxed">Procesamiento de componentes sanguíneos, desde la atención al donante y la producción de componentes sanguíneos para uso en pacientes e industrial hasta el despacho.</p>
+                                <p class="text-xs text-gray-500 mt-3 italic">Traducción informativa. El certificado emitido consigna el alcance en inglés: “Processing of blood components, from donor care and blood component production for patient and industrial use through to dispatch.”</p>
+                                <div class="mt-3 pt-3 border-t border-gray-100">
+                                    <span class="text-sm text-gray-500">Código IAF: 38</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-gradient-to-br from-esparta-rojo/5 to-esparta-rojoclaro/10 rounded-xl p-6 shadow-sm border border-esparta-rojo/10">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                                    <i class="fas fa-info-circle text-esparta-rojo mr-2"></i>Detalles del Certificado
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Número de Certificado</p>
+                                        <p class="font-bold text-gray-900 text-sm">SIS1171026Q072</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Registro Inicial</p>
+                                        <p class="font-bold text-gray-900">15.10.2026</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Última Emisión</p>
+                                        <p class="font-bold text-gray-900">15.10.2026</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Fecha de Expiración</p>
+                                        <p class="font-bold text-gray-900">14.10.2029</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Próxima Vigilancia</p>
+                                        <p class="font-bold text-gray-900">15.09.2027</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Re-certificación</p>
+                                        <p class="font-bold text-gray-900">15.09.2029</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-certificate text-esparta-rojo mr-2"></i>Organismo Certificador
+                                </h3>
+                                <p class="font-bold text-gray-900 mb-1">SIS CERTIFICATIONS PRIVATE LIMITED</p>
+                                <p class="text-sm text-gray-600 mb-3">Organismo de certificación acreditado</p>
+                                <div class="text-xs text-gray-500 space-y-1">
+                                    <p>Unidad No. 514, 5º Piso, Vipul Business Park, Sector-48</p>
+                                    <p>Carretera Sohna, Gurgaon-122018, Haryana, India</p>
+                                    <p class="mt-2"><i class="fas fa-envelope mr-1"></i> support@siscertifications.com</p>
+                                    <p><i class="fas fa-globe mr-1"></i> www.siscertifications.com</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-gold-light rounded-xl p-6 border border-gold/20">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-address-card text-gold-accent mr-2"></i>Información de Contacto
+                                </h3>
+                                <div class="space-y-2 text-sm text-gray-700">
+                                    <p><i class="fas fa-phone text-esparta-rojo mr-2"></i> (809) 382-3809 / (809) 382-8307</p>
+                                    <p><i class="fas fa-envelope text-esparta-rojo mr-2"></i> info@bancodesangreesparta.com</p>
+                                    <p><i class="fas fa-globe text-esparta-rojo mr-2"></i> www.bancodesangreesparta.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-gray-50 to-primary-50/30 rounded-2xl p-6 md:p-8 border border-gray-200">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Vista Previa del Certificado</h3>
+                                <p class="text-gray-600">Vista previa del documento oficial</p>
+                            </div>
+                            <div class="mt-4 md:mt-0 flex flex-wrap gap-3">
+                                <a href="../NormasISO/Certificados/Espanhol/ISO9001-Esparta-Santiago-ES.pdf" target="_blank" class="inline-flex items-center bg-esparta-rojo hover:bg-esparta-rojoclaro text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+                                    <i class="fas fa-file-pdf mr-3 text-lg"></i>Descargar PDF
+                                </a>
+                                <a href="https://siscertifications.com" target="_blank" class="inline-flex items-center bg-gold-accent hover:bg-amber-500 text-esparta-rojo font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+                                    <i class="fas fa-shield-alt mr-3 text-lg"></i>Verificar en SIS Cert
+                                </a>
+                            </div>
+                        </div>
+                        <div class="certificate-card bg-white rounded-xl p-4 shadow-lg border border-gray-200">
+                            <a href="../NormasISO/Certificados/Espanhol/ISO9001-Esparta-Santiago-ES.png" target="_blank" class="block overflow-hidden rounded-lg">
+                                <img src="../NormasISO/Certificados/Espanhol/ISO9001-Esparta-Santiago-ES.png" alt="Certificado ISO 9001 en español – Santiago de los Caballeros" class="w-full h-auto rounded-lg transition-transform duration-500 hover:scale-[1.02]">
+                            </a>
+                            <div class="flex justify-center mt-6">
+                                <div class="flex items-center text-gray-500 text-sm"><i class="fas fa-expand-alt mr-2"></i>Haz clic en la imagen para ampliar</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-gray-600">
+                        <p class="flex items-start"><i class="fas fa-info-circle text-yellow-600 mr-2 mt-0.5"></i><span><strong>Nota:</strong> El certificado es propiedad de SIS Certifications. La validez del certificado está sujeta a la finalización exitosa de la Auditoría de Vigilancia en o antes de la fecha establecida. La organización certificada es responsable de mantener el cumplimiento de las normas correspondientes. Cualquier cambio significativo en el alcance de la certificación o en la norma mencionada invalida este certificado.</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-santiago-en" class="tab-content p-6 md:p-8 hidden">
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="w-14 h-14 rounded-xl esparta-icon flex items-center justify-center mr-4 shadow-lg">
+                                    <i class="fas fa-droplet text-white text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="text-2xl font-bold text-gray-900">ISO 9001:2015 Certificate</h2>
+                                    <p class="text-gray-600">Quality Management System · Santiago de los Caballeros</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 md:mt-0">
+                            <span class="info-chip"><i class="fas fa-calendar-check mr-2"></i>Valid until: 14.10.2029</span>
+                            <span class="info-chip"><i class="fas fa-hashtag mr-2"></i>SIS1171026Q072</span>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-6">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-building text-esparta-rojo mr-2"></i>Certified Company
+                                </h3>
+                                <p class="text-2xl font-bold text-esparta-rojo mb-2">Banco de Sangre Esparta</p>
+                                <div class="space-y-2 text-gray-600">
+                                    <p class="flex items-start"><i class="fas fa-map-marker-alt text-gray-400 mr-2 w-5"></i><span>Site 1 – Calle Pedro Francisco Bonó 60, Santiago de los Caballeros, República Dominicana</span></p>
+                                    <p class="flex items-start"><i class="fas fa-map-marker-alt text-gray-400 mr-2 w-5"></i><span>Site 2 – Avenida Las Carreras, Edificio M59, Santiago de los Caballeros, República Dominicana</span></p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-bullseye text-esparta-rojo mr-2"></i>Certificate Scope
+                                </h3>
+                                <p class="text-gray-700 leading-relaxed">Processing of blood components, from donor care and blood component production for patient and industrial use through to dispatch.</p>
+                                
+                                <div class="mt-3 pt-3 border-t border-gray-100">
+                                    <span class="text-sm text-gray-500">IAF Code: 38</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-gradient-to-br from-esparta-rojo/5 to-esparta-rojoclaro/10 rounded-xl p-6 shadow-sm border border-esparta-rojo/10">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                                    <i class="fas fa-info-circle text-esparta-rojo mr-2"></i>Certificate Details
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Certificate Number</p>
+                                        <p class="font-bold text-gray-900 text-sm">SIS1171026Q072</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Initial Registration</p>
+                                        <p class="font-bold text-gray-900">15.10.2026</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Latest Issue</p>
+                                        <p class="font-bold text-gray-900">15.10.2026</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Expiry Date</p>
+                                        <p class="font-bold text-gray-900">14.10.2029</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Next Surveillance</p>
+                                        <p class="font-bold text-gray-900">15.09.2027</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Re-certification</p>
+                                        <p class="font-bold text-gray-900">15.09.2029</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-certificate text-esparta-rojo mr-2"></i>Certification Body
+                                </h3>
+                                <p class="font-bold text-gray-900 mb-1">SIS CERTIFICATIONS PRIVATE LIMITED</p>
+                                <p class="text-sm text-gray-600 mb-3">Accredited certification body</p>
+                                <div class="text-xs text-gray-500 space-y-1">
+                                    <p>Unit No. 514, 5th Floor, Vipul Business Park, Sector-48</p>
+                                    <p>Sohna Road, Gurgaon-122018, Haryana, India</p>
+                                    <p class="mt-2"><i class="fas fa-envelope mr-1"></i> support@siscertifications.com</p>
+                                    <p><i class="fas fa-globe mr-1"></i> www.siscertifications.com</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-gold-light rounded-xl p-6 border border-gold/20">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-address-card text-gold-accent mr-2"></i>Contact Information
+                                </h3>
+                                <div class="space-y-2 text-sm text-gray-700">
+                                    <p><i class="fas fa-phone text-esparta-rojo mr-2"></i> (809) 382-3809 / (809) 382-8307</p>
+                                    <p><i class="fas fa-envelope text-esparta-rojo mr-2"></i> info@bancodesangreesparta.com</p>
+                                    <p><i class="fas fa-globe text-esparta-rojo mr-2"></i> www.bancodesangreesparta.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-gray-50 to-primary-50/30 rounded-2xl p-6 md:p-8 border border-gray-200">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Certificate Preview</h3>
+                                <p class="text-gray-600">Official document preview</p>
+                            </div>
+                            <div class="mt-4 md:mt-0 flex flex-wrap gap-3">
+                                <a href="../NormasISO/Certificados/Ingles/ISO9001-Esparta-Santiago-EN.pdf" target="_blank" class="inline-flex items-center bg-esparta-rojo hover:bg-esparta-rojoclaro text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+                                    <i class="fas fa-file-pdf mr-3 text-lg"></i>Download PDF
+                                </a>
+                                <a href="https://siscertifications.com" target="_blank" class="inline-flex items-center bg-gold-accent hover:bg-amber-500 text-esparta-rojo font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+                                    <i class="fas fa-shield-alt mr-3 text-lg"></i>Verify at SIS Cert
+                                </a>
+                            </div>
+                        </div>
+                        <div class="certificate-card bg-white rounded-xl p-4 shadow-lg border border-gray-200">
+                            <a href="../NormasISO/Certificados/Ingles/ISO9001-Esparta-Santiago-EN.png" target="_blank" class="block overflow-hidden rounded-lg">
+                                <img src="../NormasISO/Certificados/Ingles/ISO9001-Esparta-Santiago-EN.png" alt="ISO 9001 Certificate in English – Santiago de los Caballeros" class="w-full h-auto rounded-lg transition-transform duration-500 hover:scale-[1.02]">
+                            </a>
+                            <div class="flex justify-center mt-6">
+                                <div class="flex items-center text-gray-500 text-sm"><i class="fas fa-expand-alt mr-2"></i>Click the image to enlarge</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-gray-600">
+                        <p class="flex items-start"><i class="fas fa-info-circle text-yellow-600 mr-2 mt-0.5"></i><span><strong>Note:</strong> The certificate is the property of SIS Certifications. The validity of the Certificate is subject to the successful completion of Surveillance Audit on or before the due date. The certified organization is responsible for maintaining compliance with the relevant standards. Any significant change in the scope of the certification or in the standard referred to above renders this certificate invalid.</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-laromana-es" class="tab-content p-6 md:p-8 hidden">
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="w-14 h-14 rounded-xl esparta-icon flex items-center justify-center mr-4 shadow-lg">
+                                    <i class="fas fa-droplet text-white text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="text-2xl font-bold text-gray-900">Certificado ISO 9001:2015</h2>
+                                    <p class="text-gray-600">Sistema de Gestión de la Calidad · La Romana</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 md:mt-0">
+                            <span class="info-chip"><i class="fas fa-calendar-check mr-2"></i>Válido hasta: 14.10.2029</span>
+                            <span class="info-chip"><i class="fas fa-hashtag mr-2"></i>SIS1171026Q072</span>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-6">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-building text-esparta-rojo mr-2"></i>Empresa Certificada
+                                </h3>
+                                <p class="text-2xl font-bold text-esparta-rojo mb-2">Banco de Sangre Esparta</p>
+                                <div class="space-y-2 text-gray-600">
+                                    <p class="flex items-start"><i class="fas fa-map-marker-alt text-gray-400 mr-2 w-5"></i><span>Av. Padre Abreu, #37, Esq. Tiburcio Millán López (Edificio de la Regional de Trabajo), La Romana, República Dominicana</span></p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-bullseye text-esparta-rojo mr-2"></i>Alcance del Certificado
+                                </h3>
+                                <p class="text-gray-700 leading-relaxed">Procesamiento de componentes sanguíneos, desde la atención al donante y la producción de componentes sanguíneos para uso en pacientes e industrial hasta el despacho.</p>
+                                <p class="text-xs text-gray-500 mt-3 italic">Traducción informativa. El certificado emitido consigna el alcance en inglés: “Processing of blood components, from donor care and blood component production for patient and industrial use through to dispatch.”</p>
+                                <div class="mt-3 pt-3 border-t border-gray-100">
+                                    <span class="text-sm text-gray-500">Código IAF: 38</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-gradient-to-br from-esparta-rojo/5 to-esparta-rojoclaro/10 rounded-xl p-6 shadow-sm border border-esparta-rojo/10">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                                    <i class="fas fa-info-circle text-esparta-rojo mr-2"></i>Detalles del Certificado
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Número de Certificado</p>
+                                        <p class="font-bold text-gray-900 text-sm">SIS1171026Q072</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Registro Inicial</p>
+                                        <p class="font-bold text-gray-900">15.10.2026</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Última Emisión</p>
+                                        <p class="font-bold text-gray-900">15.10.2026</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Fecha de Expiración</p>
+                                        <p class="font-bold text-gray-900">14.10.2029</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Próxima Vigilancia</p>
+                                        <p class="font-bold text-gray-900">15.09.2027</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Re-certificación</p>
+                                        <p class="font-bold text-gray-900">15.09.2029</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-certificate text-esparta-rojo mr-2"></i>Organismo Certificador
+                                </h3>
+                                <p class="font-bold text-gray-900 mb-1">SIS CERTIFICATIONS PRIVATE LIMITED</p>
+                                <p class="text-sm text-gray-600 mb-3">Organismo de certificación acreditado</p>
+                                <div class="text-xs text-gray-500 space-y-1">
+                                    <p>Unidad No. 514, 5º Piso, Vipul Business Park, Sector-48</p>
+                                    <p>Carretera Sohna, Gurgaon-122018, Haryana, India</p>
+                                    <p class="mt-2"><i class="fas fa-envelope mr-1"></i> support@siscertifications.com</p>
+                                    <p><i class="fas fa-globe mr-1"></i> www.siscertifications.com</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-gold-light rounded-xl p-6 border border-gold/20">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-address-card text-gold-accent mr-2"></i>Información de Contacto
+                                </h3>
+                                <div class="space-y-2 text-sm text-gray-700">
+                                    <p><i class="fas fa-phone text-esparta-rojo mr-2"></i> (809) 382-3809 / (809) 382-8307</p>
+                                    <p><i class="fas fa-envelope text-esparta-rojo mr-2"></i> info@bancodesangreesparta.com</p>
+                                    <p><i class="fas fa-globe text-esparta-rojo mr-2"></i> www.bancodesangreesparta.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-gray-50 to-primary-50/30 rounded-2xl p-6 md:p-8 border border-gray-200">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Vista Previa del Certificado</h3>
+                                <p class="text-gray-600">Vista previa del documento oficial</p>
+                            </div>
+                            <div class="mt-4 md:mt-0 flex flex-wrap gap-3">
+                                <a href="../NormasISO/Certificados/Espanhol/ISO9001-Esparta-LaRomana-ES.pdf" target="_blank" class="inline-flex items-center bg-esparta-rojo hover:bg-esparta-rojoclaro text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+                                    <i class="fas fa-file-pdf mr-3 text-lg"></i>Descargar PDF
+                                </a>
+                                <a href="https://siscertifications.com" target="_blank" class="inline-flex items-center bg-gold-accent hover:bg-amber-500 text-esparta-rojo font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+                                    <i class="fas fa-shield-alt mr-3 text-lg"></i>Verificar en SIS Cert
+                                </a>
+                            </div>
+                        </div>
+                        <div class="certificate-card bg-white rounded-xl p-4 shadow-lg border border-gray-200">
+                            <a href="../NormasISO/Certificados/Espanhol/ISO9001-Esparta-LaRomana-ES.png" target="_blank" class="block overflow-hidden rounded-lg">
+                                <img src="../NormasISO/Certificados/Espanhol/ISO9001-Esparta-LaRomana-ES.png" alt="Certificado ISO 9001 en español – La Romana" class="w-full h-auto rounded-lg transition-transform duration-500 hover:scale-[1.02]">
+                            </a>
+                            <div class="flex justify-center mt-6">
+                                <div class="flex items-center text-gray-500 text-sm"><i class="fas fa-expand-alt mr-2"></i>Haz clic en la imagen para ampliar</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-gray-600">
+                        <p class="flex items-start"><i class="fas fa-info-circle text-yellow-600 mr-2 mt-0.5"></i><span><strong>Nota:</strong> El certificado es propiedad de SIS Certifications. La validez del certificado está sujeta a la finalización exitosa de la Auditoría de Vigilancia en o antes de la fecha establecida. La organización certificada es responsable de mantener el cumplimiento de las normas correspondientes. Cualquier cambio significativo en el alcance de la certificación o en la norma mencionada invalida este certificado.</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-laromana-en" class="tab-content p-6 md:p-8 hidden">
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="w-14 h-14 rounded-xl esparta-icon flex items-center justify-center mr-4 shadow-lg">
+                                    <i class="fas fa-droplet text-white text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h2 class="text-2xl font-bold text-gray-900">ISO 9001:2015 Certificate</h2>
+                                    <p class="text-gray-600">Quality Management System · La Romana</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 md:mt-0">
+                            <span class="info-chip"><i class="fas fa-calendar-check mr-2"></i>Valid until: 14.10.2029</span>
+                            <span class="info-chip"><i class="fas fa-hashtag mr-2"></i>SIS1171026Q072</span>
+                        </div>
+                    </div>
+
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-6">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-building text-esparta-rojo mr-2"></i>Certified Company
+                                </h3>
+                                <p class="text-2xl font-bold text-esparta-rojo mb-2">Banco de Sangre Esparta</p>
+                                <div class="space-y-2 text-gray-600">
+                                    <p class="flex items-start"><i class="fas fa-map-marker-alt text-gray-400 mr-2 w-5"></i><span>Av. Padre Abreu, #37, Esq. Tiburcio Millán López (Edificio de la Regional de Trabajo), La Romana, República Dominicana</span></p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-bullseye text-esparta-rojo mr-2"></i>Certificate Scope
+                                </h3>
+                                <p class="text-gray-700 leading-relaxed">Processing of blood components, from donor care and blood component production for patient and industrial use through to dispatch.</p>
+                                
+                                <div class="mt-3 pt-3 border-t border-gray-100">
+                                    <span class="text-sm text-gray-500">IAF Code: 38</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="bg-gradient-to-br from-esparta-rojo/5 to-esparta-rojoclaro/10 rounded-xl p-6 shadow-sm border border-esparta-rojo/10">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center">
+                                    <i class="fas fa-info-circle text-esparta-rojo mr-2"></i>Certificate Details
+                                </h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Certificate Number</p>
+                                        <p class="font-bold text-gray-900 text-sm">SIS1171026Q072</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Initial Registration</p>
+                                        <p class="font-bold text-gray-900">15.10.2026</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Latest Issue</p>
+                                        <p class="font-bold text-gray-900">15.10.2026</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Expiry Date</p>
+                                        <p class="font-bold text-gray-900">14.10.2029</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Next Surveillance</p>
+                                        <p class="font-bold text-gray-900">15.09.2027</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Re-certification</p>
+                                        <p class="font-bold text-gray-900">15.09.2029</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-certificate text-esparta-rojo mr-2"></i>Certification Body
+                                </h3>
+                                <p class="font-bold text-gray-900 mb-1">SIS CERTIFICATIONS PRIVATE LIMITED</p>
+                                <p class="text-sm text-gray-600 mb-3">Accredited certification body</p>
+                                <div class="text-xs text-gray-500 space-y-1">
+                                    <p>Unit No. 514, 5th Floor, Vipul Business Park, Sector-48</p>
+                                    <p>Sohna Road, Gurgaon-122018, Haryana, India</p>
+                                    <p class="mt-2"><i class="fas fa-envelope mr-1"></i> support@siscertifications.com</p>
+                                    <p><i class="fas fa-globe mr-1"></i> www.siscertifications.com</p>
+                                </div>
+                            </div>
+
+                            <div class="bg-gold-light rounded-xl p-6 border border-gold/20">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-address-card text-gold-accent mr-2"></i>Contact Information
+                                </h3>
+                                <div class="space-y-2 text-sm text-gray-700">
+                                    <p><i class="fas fa-phone text-esparta-rojo mr-2"></i> (809) 382-3809 / (809) 382-8307</p>
+                                    <p><i class="fas fa-envelope text-esparta-rojo mr-2"></i> info@bancodesangreesparta.com</p>
+                                    <p><i class="fas fa-globe text-esparta-rojo mr-2"></i> www.bancodesangreesparta.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-gray-50 to-primary-50/30 rounded-2xl p-6 md:p-8 border border-gray-200">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Certificate Preview</h3>
+                                <p class="text-gray-600">Official document preview</p>
+                            </div>
+                            <div class="mt-4 md:mt-0 flex flex-wrap gap-3">
+                                <a href="../NormasISO/Certificados/Ingles/ISO9001-Esparta-LaRomana-EN.pdf" target="_blank" class="inline-flex items-center bg-esparta-rojo hover:bg-esparta-rojoclaro text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+                                    <i class="fas fa-file-pdf mr-3 text-lg"></i>Download PDF
+                                </a>
+                                <a href="https://siscertifications.com" target="_blank" class="inline-flex items-center bg-gold-accent hover:bg-amber-500 text-esparta-rojo font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl">
+                                    <i class="fas fa-shield-alt mr-3 text-lg"></i>Verify at SIS Cert
+                                </a>
+                            </div>
+                        </div>
+                        <div class="certificate-card bg-white rounded-xl p-4 shadow-lg border border-gray-200">
+                            <a href="../NormasISO/Certificados/Ingles/ISO9001-Esparta-LaRomana-EN.png" target="_blank" class="block overflow-hidden rounded-lg">
+                                <img src="../NormasISO/Certificados/Ingles/ISO9001-Esparta-LaRomana-EN.png" alt="ISO 9001 Certificate in English – La Romana" class="w-full h-auto rounded-lg transition-transform duration-500 hover:scale-[1.02]">
+                            </a>
+                            <div class="flex justify-center mt-6">
+                                <div class="flex items-center text-gray-500 text-sm"><i class="fas fa-expand-alt mr-2"></i>Click the image to enlarge</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded-xl text-sm text-gray-600">
+                        <p class="flex items-start"><i class="fas fa-info-circle text-yellow-600 mr-2 mt-0.5"></i><span><strong>Note:</strong> The certificate is the property of SIS Certifications. The validity of the Certificate is subject to the successful completion of Surveillance Audit on or before the due date. The certified organization is responsible for maintaining compliance with the relevant standards. Any significant change in the scope of the certification or in the standard referred to above renders this certificate invalid.</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-rec-santiago-es" class="tab-content p-6 md:p-8 hidden">
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+                        <div class="flex items-center">
+                            <div class="w-14 h-14 rounded-xl esparta-icon flex items-center justify-center mr-4 shadow-lg"><i class="fas fa-award text-white text-2xl"></i></div>
+                            <div><h2 class="text-2xl font-bold text-gray-900">Certificado de Reconocimiento</h2><p class="text-gray-600">Reconocimiento ISO 9001:2015 · Santiago</p></div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 md:mt-0"><span class="info-chip"><i class="fas fa-calendar-check mr-2"></i>15.10.2026</span><span class="info-chip"><i class="fas fa-hashtag mr-2"></i>SIS1171026Q072</span></div>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-6">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-building text-esparta-rojo mr-2"></i>Organización</h3>
+                                <p class="text-2xl font-bold text-esparta-rojo mb-2">Banco de Sangre Esparta</p>
+                                <div class="space-y-2 text-gray-600"><p class="flex items-start"><i class="fas fa-map-marker-alt text-gray-400 mr-2 w-5"></i><span>Sede 1 – Calle Pedro Francisco Bonó 60, Santiago de los Caballeros, República Dominicana</span></p>
+                                    <p class="flex items-start"><i class="fas fa-map-marker-alt text-gray-400 mr-2 w-5"></i><span>Sede 2 – Avenida Las Carreras, Edificio M59, Santiago de los Caballeros, República Dominicana</span></p></div>
+                            </div>
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-bullseye text-esparta-rojo mr-2"></i>Norma reconocida</h3>
+                                <p class="text-gray-700 leading-relaxed">ISO 9001:2015 – Sistema de Gestión de la Calidad. Esta carta de reconocimiento solo es válida junto con el Certificado ISO 9001:2015 vigente, número SIS1171026Q072.</p>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="bg-gradient-to-br from-esparta-rojo/5 to-esparta-rojoclaro/10 rounded-xl p-6 shadow-sm border border-esparta-rojo/10">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center"><i class="fas fa-info-circle text-esparta-rojo mr-2"></i>Detalles</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Norma</p>
+                                        <p class="font-bold text-gray-900 text-sm">ISO 9001:2015</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Fecha</p>
+                                        <p class="font-bold text-gray-900 text-sm">15.10.2026</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Certificado asociado</p>
+                                        <p class="font-bold text-gray-900 text-sm">SIS1171026Q072</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Idioma</p>
+                                        <p class="font-bold text-gray-900 text-sm">Español</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-certificate text-esparta-rojo mr-2"></i>Organismo Certificador</h3>
+                                <p class="font-bold text-gray-900 mb-2">SIS CERTIFICATIONS PRIVATE LIMITED</p>
+                                <div class="text-xs text-gray-500 space-y-1"><p>Unidad No. 514, 5º Piso, Vipul Business Park, Sector-48</p><p>Carretera Sohna, Gurgaon-122018, Haryana, India</p><p>www.siscertifications.com</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-primary-50/30 rounded-2xl p-6 md:p-8 border border-gray-200">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                            <div><h3 class="text-xl font-bold text-gray-900 mb-2">Vista previa del certificado</h3><p class="text-gray-600">Haz clic en la imagen para ampliar</p></div>
+                            <div class="mt-4 md:mt-0"><a href="../NormasISO/Certificados/Reconocimiento/Reconocimiento-Esparta-Santiago-ES.pdf" target="_blank" class="inline-flex items-center bg-esparta-rojo hover:bg-esparta-rojoclaro text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"><i class="fas fa-file-pdf mr-3 text-lg"></i>Descargar PDF</a></div>
+                        </div>
+                        <div class="certificate-card bg-white rounded-xl p-4 shadow-lg border border-gray-200">
+                            <a href="../NormasISO/Certificados/Reconocimiento/Reconocimiento-Esparta-Santiago-ES.png" target="_blank" class="block overflow-hidden rounded-lg"><img src="../NormasISO/Certificados/Reconocimiento/Reconocimiento-Esparta-Santiago-ES.png" alt="Certificate of Recognition – Santiago" class="w-full h-auto rounded-lg"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-rec-santiago-en" class="tab-content p-6 md:p-8 hidden">
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+                        <div class="flex items-center">
+                            <div class="w-14 h-14 rounded-xl esparta-icon flex items-center justify-center mr-4 shadow-lg"><i class="fas fa-award text-white text-2xl"></i></div>
+                            <div><h2 class="text-2xl font-bold text-gray-900">Certificate of Recognition</h2><p class="text-gray-600">Reconocimiento ISO 9001:2015 · Santiago</p></div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 md:mt-0"><span class="info-chip"><i class="fas fa-calendar-check mr-2"></i>15.10.2026</span><span class="info-chip"><i class="fas fa-hashtag mr-2"></i>SIS1171026Q072</span></div>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-6">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-building text-esparta-rojo mr-2"></i>Organización</h3>
+                                <p class="text-2xl font-bold text-esparta-rojo mb-2">Banco de Sangre Esparta</p>
+                                <div class="space-y-2 text-gray-600"><p class="flex items-start"><i class="fas fa-map-marker-alt text-gray-400 mr-2 w-5"></i><span>Sede 1 – Calle Pedro Francisco Bonó 60, Santiago de los Caballeros, República Dominicana</span></p>
+                                    <p class="flex items-start"><i class="fas fa-map-marker-alt text-gray-400 mr-2 w-5"></i><span>Sede 2 – Avenida Las Carreras, Edificio M59, Santiago de los Caballeros, República Dominicana</span></p></div>
+                            </div>
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-bullseye text-esparta-rojo mr-2"></i>Norma reconocida</h3>
+                                <p class="text-gray-700 leading-relaxed">ISO 9001:2015 – Sistema de Gestión de la Calidad. Esta carta de reconocimiento solo es válida junto con el Certificado ISO 9001:2015 vigente, número SIS1171026Q072.</p>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="bg-gradient-to-br from-esparta-rojo/5 to-esparta-rojoclaro/10 rounded-xl p-6 shadow-sm border border-esparta-rojo/10">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center"><i class="fas fa-info-circle text-esparta-rojo mr-2"></i>Detalles</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Norma</p>
+                                        <p class="font-bold text-gray-900 text-sm">ISO 9001:2015</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Fecha</p>
+                                        <p class="font-bold text-gray-900 text-sm">15.10.2026</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Certificado asociado</p>
+                                        <p class="font-bold text-gray-900 text-sm">SIS1171026Q072</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Idioma</p>
+                                        <p class="font-bold text-gray-900 text-sm">English</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-certificate text-esparta-rojo mr-2"></i>Organismo Certificador</h3>
+                                <p class="font-bold text-gray-900 mb-2">SIS CERTIFICATIONS PRIVATE LIMITED</p>
+                                <div class="text-xs text-gray-500 space-y-1"><p>Unidad No. 514, 5º Piso, Vipul Business Park, Sector-48</p><p>Carretera Sohna, Gurgaon-122018, Haryana, India</p><p>www.siscertifications.com</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-primary-50/30 rounded-2xl p-6 md:p-8 border border-gray-200">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                            <div><h3 class="text-xl font-bold text-gray-900 mb-2">Vista previa del certificado</h3><p class="text-gray-600">Haz clic en la imagen para ampliar</p></div>
+                            <div class="mt-4 md:mt-0"><a href="../NormasISO/Certificados/Reconocimiento/Reconocimiento-Esparta-Santiago-EN.pdf" target="_blank" class="inline-flex items-center bg-esparta-rojo hover:bg-esparta-rojoclaro text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"><i class="fas fa-file-pdf mr-3 text-lg"></i>Descargar PDF</a></div>
+                        </div>
+                        <div class="certificate-card bg-white rounded-xl p-4 shadow-lg border border-gray-200">
+                            <a href="../NormasISO/Certificados/Reconocimiento/Reconocimiento-Esparta-Santiago-EN.png" target="_blank" class="block overflow-hidden rounded-lg"><img src="../NormasISO/Certificados/Reconocimiento/Reconocimiento-Esparta-Santiago-EN.png" alt="Certificate of Recognition – Santiago" class="w-full h-auto rounded-lg"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-rec-laromana-es" class="tab-content p-6 md:p-8 hidden">
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+                        <div class="flex items-center">
+                            <div class="w-14 h-14 rounded-xl esparta-icon flex items-center justify-center mr-4 shadow-lg"><i class="fas fa-award text-white text-2xl"></i></div>
+                            <div><h2 class="text-2xl font-bold text-gray-900">Certificado de Reconocimiento</h2><p class="text-gray-600">Reconocimiento ISO 9001:2015 · La Romana</p></div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 md:mt-0"><span class="info-chip"><i class="fas fa-calendar-check mr-2"></i>15.10.2026</span><span class="info-chip"><i class="fas fa-hashtag mr-2"></i>SIS1171026Q072</span></div>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-6">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-building text-esparta-rojo mr-2"></i>Organización</h3>
+                                <p class="text-2xl font-bold text-esparta-rojo mb-2">Banco de Sangre Esparta</p>
+                                <div class="space-y-2 text-gray-600"><p class="flex items-start"><i class="fas fa-map-marker-alt text-gray-400 mr-2 w-5"></i><span>Av. Padre Abreu, #37, Esq. Tiburcio Millán López (Edificio de la Regional de Trabajo), La Romana, República Dominicana</span></p></div>
+                            </div>
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-bullseye text-esparta-rojo mr-2"></i>Norma reconocida</h3>
+                                <p class="text-gray-700 leading-relaxed">ISO 9001:2015 – Sistema de Gestión de la Calidad. Esta carta de reconocimiento solo es válida junto con el Certificado ISO 9001:2015 vigente, número SIS1171026Q072.</p>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="bg-gradient-to-br from-esparta-rojo/5 to-esparta-rojoclaro/10 rounded-xl p-6 shadow-sm border border-esparta-rojo/10">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center"><i class="fas fa-info-circle text-esparta-rojo mr-2"></i>Detalles</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Norma</p>
+                                        <p class="font-bold text-gray-900 text-sm">ISO 9001:2015</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Fecha</p>
+                                        <p class="font-bold text-gray-900 text-sm">15.10.2026</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Certificado asociado</p>
+                                        <p class="font-bold text-gray-900 text-sm">SIS1171026Q072</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Idioma</p>
+                                        <p class="font-bold text-gray-900 text-sm">Español</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-certificate text-esparta-rojo mr-2"></i>Organismo Certificador</h3>
+                                <p class="font-bold text-gray-900 mb-2">SIS CERTIFICATIONS PRIVATE LIMITED</p>
+                                <div class="text-xs text-gray-500 space-y-1"><p>Unidad No. 514, 5º Piso, Vipul Business Park, Sector-48</p><p>Carretera Sohna, Gurgaon-122018, Haryana, India</p><p>www.siscertifications.com</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-primary-50/30 rounded-2xl p-6 md:p-8 border border-gray-200">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                            <div><h3 class="text-xl font-bold text-gray-900 mb-2">Vista previa del certificado</h3><p class="text-gray-600">Haz clic en la imagen para ampliar</p></div>
+                            <div class="mt-4 md:mt-0"><a href="../NormasISO/Certificados/Reconocimiento/Reconocimiento-Esparta-LaRomana-ES.pdf" target="_blank" class="inline-flex items-center bg-esparta-rojo hover:bg-esparta-rojoclaro text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"><i class="fas fa-file-pdf mr-3 text-lg"></i>Descargar PDF</a></div>
+                        </div>
+                        <div class="certificate-card bg-white rounded-xl p-4 shadow-lg border border-gray-200">
+                            <a href="../NormasISO/Certificados/Reconocimiento/Reconocimiento-Esparta-LaRomana-ES.png" target="_blank" class="block overflow-hidden rounded-lg"><img src="../NormasISO/Certificados/Reconocimiento/Reconocimiento-Esparta-LaRomana-ES.png" alt="Certificate of Recognition – La Romana" class="w-full h-auto rounded-lg"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-rec-laromana-en" class="tab-content p-6 md:p-8 hidden">
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+                        <div class="flex items-center">
+                            <div class="w-14 h-14 rounded-xl esparta-icon flex items-center justify-center mr-4 shadow-lg"><i class="fas fa-award text-white text-2xl"></i></div>
+                            <div><h2 class="text-2xl font-bold text-gray-900">Certificate of Recognition</h2><p class="text-gray-600">Reconocimiento ISO 9001:2015 · La Romana</p></div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 md:mt-0"><span class="info-chip"><i class="fas fa-calendar-check mr-2"></i>15.10.2026</span><span class="info-chip"><i class="fas fa-hashtag mr-2"></i>SIS1171026Q072</span></div>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-6">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-building text-esparta-rojo mr-2"></i>Organización</h3>
+                                <p class="text-2xl font-bold text-esparta-rojo mb-2">Banco de Sangre Esparta</p>
+                                <div class="space-y-2 text-gray-600"><p class="flex items-start"><i class="fas fa-map-marker-alt text-gray-400 mr-2 w-5"></i><span>Av. Padre Abreu, #37, Esq. Tiburcio Millán López (Edificio de la Regional de Trabajo), La Romana, República Dominicana</span></p></div>
+                            </div>
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-bullseye text-esparta-rojo mr-2"></i>Norma reconocida</h3>
+                                <p class="text-gray-700 leading-relaxed">ISO 9001:2015 – Sistema de Gestión de la Calidad. Esta carta de reconocimiento solo es válida junto con el Certificado ISO 9001:2015 vigente, número SIS1171026Q072.</p>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="bg-gradient-to-br from-esparta-rojo/5 to-esparta-rojoclaro/10 rounded-xl p-6 shadow-sm border border-esparta-rojo/10">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center"><i class="fas fa-info-circle text-esparta-rojo mr-2"></i>Detalles</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Norma</p>
+                                        <p class="font-bold text-gray-900 text-sm">ISO 9001:2015</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Fecha</p>
+                                        <p class="font-bold text-gray-900 text-sm">15.10.2026</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Certificado asociado</p>
+                                        <p class="font-bold text-gray-900 text-sm">SIS1171026Q072</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Idioma</p>
+                                        <p class="font-bold text-gray-900 text-sm">English</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-certificate text-esparta-rojo mr-2"></i>Organismo Certificador</h3>
+                                <p class="font-bold text-gray-900 mb-2">SIS CERTIFICATIONS PRIVATE LIMITED</p>
+                                <div class="text-xs text-gray-500 space-y-1"><p>Unidad No. 514, 5º Piso, Vipul Business Park, Sector-48</p><p>Carretera Sohna, Gurgaon-122018, Haryana, India</p><p>www.siscertifications.com</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-primary-50/30 rounded-2xl p-6 md:p-8 border border-gray-200">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                            <div><h3 class="text-xl font-bold text-gray-900 mb-2">Vista previa del certificado</h3><p class="text-gray-600">Haz clic en la imagen para ampliar</p></div>
+                            <div class="mt-4 md:mt-0"><a href="../NormasISO/Certificados/Reconocimiento/Reconocimiento-Esparta-LaRomana-EN.pdf" target="_blank" class="inline-flex items-center bg-esparta-rojo hover:bg-esparta-rojoclaro text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"><i class="fas fa-file-pdf mr-3 text-lg"></i>Descargar PDF</a></div>
+                        </div>
+                        <div class="certificate-card bg-white rounded-xl p-4 shadow-lg border border-gray-200">
+                            <a href="../NormasISO/Certificados/Reconocimiento/Reconocimiento-Esparta-LaRomana-EN.png" target="_blank" class="block overflow-hidden rounded-lg"><img src="../NormasISO/Certificados/Reconocimiento/Reconocimiento-Esparta-LaRomana-EN.png" alt="Certificate of Recognition – La Romana" class="w-full h-auto rounded-lg"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-imp-santiago" class="tab-content p-6 md:p-8 hidden">
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+                        <div class="flex items-center">
+                            <div class="w-14 h-14 rounded-xl esparta-icon flex items-center justify-center mr-4 shadow-lg"><i class="fas fa-award text-white text-2xl"></i></div>
+                            <div><h2 class="text-2xl font-bold text-gray-900">Certificado de Implementación</h2><p class="text-gray-600">Sistema de Gestión de la Calidad ISO 9001:2015 · Santiago</p></div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 md:mt-0"><span class="info-chip"><i class="fas fa-calendar-check mr-2"></i>29.04.2026</span><span class="info-chip"><i class="fas fa-hashtag mr-2"></i>27KQ20260429RMRD1</span></div>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-6">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-building text-esparta-rojo mr-2"></i>Organización</h3>
+                                <p class="text-2xl font-bold text-esparta-rojo mb-2">Banco de Sangre Esparta</p>
+                                <div class="space-y-2 text-gray-600"><p class="flex items-start"><i class="fas fa-map-marker-alt text-gray-400 mr-2 w-5"></i><span>Sede 1 – Calle Pedro Francisco Bonó 60, Santiago de los Caballeros, República Dominicana</span></p>
+                                    <p class="flex items-start"><i class="fas fa-map-marker-alt text-gray-400 mr-2 w-5"></i><span>Sede 2 – Avenida Las Carreras, Edificio M59, Santiago de los Caballeros, República Dominicana</span></p></div>
+                            </div>
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-bullseye text-esparta-rojo mr-2"></i>Alcance</h3>
+                                <p class="text-gray-700 leading-relaxed">Procesamiento de componentes sanguíneos, desde la atención al donante y la producción de componentes sanguíneos para uso en pacientes e industrial hasta el despacho.</p>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="bg-gradient-to-br from-esparta-rojo/5 to-esparta-rojoclaro/10 rounded-xl p-6 shadow-sm border border-esparta-rojo/10">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center"><i class="fas fa-info-circle text-esparta-rojo mr-2"></i>Detalles</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Norma</p>
+                                        <p class="font-bold text-gray-900 text-sm">ISO 9001:2015</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Fecha de concesión</p>
+                                        <p class="font-bold text-gray-900 text-sm">29.04.2026</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Código</p>
+                                        <p class="font-bold text-gray-900 text-sm">27KQ20260429RMRD1</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Lugar</p>
+                                        <p class="font-bold text-gray-900 text-sm">Asunción</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-certificate text-esparta-rojo mr-2"></i>Emitido por</h3>
+                                <p class="font-bold text-gray-900 mb-2">Continental Consulting</p>
+                                <div class="text-xs text-gray-500 space-y-1"><p>Fernando Mazamba – Consultor en Normas ISO</p><p>Concedido en Asunción, el 29 de abril de 2026</p><p>www.continentalconsulting.org</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-primary-50/30 rounded-2xl p-6 md:p-8 border border-gray-200">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                            <div><h3 class="text-xl font-bold text-gray-900 mb-2">Vista previa del certificado</h3><p class="text-gray-600">Haz clic en la imagen para ampliar</p></div>
+                            <div class="mt-4 md:mt-0"><a href="../NormasISO/Certificados/Implementacion/Implementacion-Esparta-Santiago.pdf" target="_blank" class="inline-flex items-center bg-esparta-rojo hover:bg-esparta-rojoclaro text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"><i class="fas fa-file-pdf mr-3 text-lg"></i>Descargar PDF</a></div>
+                        </div>
+                        <div class="certificate-card bg-white rounded-xl p-4 shadow-lg border border-gray-200">
+                            <a href="../NormasISO/Certificados/Implementacion/Implementacion-Esparta-Santiago.png" target="_blank" class="block overflow-hidden rounded-lg"><img src="../NormasISO/Certificados/Implementacion/Implementacion-Esparta-Santiago.png" alt="Certificado de implementación – Santiago" class="max-w-md mx-auto w-full h-auto rounded-lg"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="content-imp-laromana" class="tab-content p-6 md:p-8 hidden">
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-8">
+                        <div class="flex items-center">
+                            <div class="w-14 h-14 rounded-xl esparta-icon flex items-center justify-center mr-4 shadow-lg"><i class="fas fa-award text-white text-2xl"></i></div>
+                            <div><h2 class="text-2xl font-bold text-gray-900">Certificado de Implementación</h2><p class="text-gray-600">Sistema de Gestión de la Calidad ISO 9001:2015 · La Romana</p></div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 md:mt-0"><span class="info-chip"><i class="fas fa-calendar-check mr-2"></i>29.04.2026</span><span class="info-chip"><i class="fas fa-hashtag mr-2"></i>27KQ20260429RMRD</span></div>
+                    </div>
+                    <div class="grid lg:grid-cols-2 gap-8 mb-8">
+                        <div class="space-y-6">
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-building text-esparta-rojo mr-2"></i>Organización</h3>
+                                <p class="text-2xl font-bold text-esparta-rojo mb-2">Banco de Sangre Esparta</p>
+                                <div class="space-y-2 text-gray-600"><p class="flex items-start"><i class="fas fa-map-marker-alt text-gray-400 mr-2 w-5"></i><span>Av. Padre Abreu, #37, Esq. Tiburcio Millán López (Edificio de la Regional de Trabajo), La Romana, República Dominicana</span></p></div>
+                            </div>
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-bullseye text-esparta-rojo mr-2"></i>Alcance</h3>
+                                <p class="text-gray-700 leading-relaxed">Procesamiento de componentes sanguíneos, desde la atención al donante y la producción de componentes sanguíneos para uso en pacientes e industrial hasta el despacho.</p>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="bg-gradient-to-br from-esparta-rojo/5 to-esparta-rojoclaro/10 rounded-xl p-6 shadow-sm border border-esparta-rojo/10">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-4 flex items-center"><i class="fas fa-info-circle text-esparta-rojo mr-2"></i>Detalles</h3>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Norma</p>
+                                        <p class="font-bold text-gray-900 text-sm">ISO 9001:2015</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Fecha de concesión</p>
+                                        <p class="font-bold text-gray-900 text-sm">29.04.2026</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Código</p>
+                                        <p class="font-bold text-gray-900 text-sm">27KQ20260429RMRD</p>
+                                    </div>
+                                    <div class="bg-white/70 rounded-lg p-4">
+                                        <p class="text-sm text-gray-500 mb-1">Lugar</p>
+                                        <p class="font-bold text-gray-900 text-sm">Asunción</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-3 flex items-center"><i class="fas fa-certificate text-esparta-rojo mr-2"></i>Emitido por</h3>
+                                <p class="font-bold text-gray-900 mb-2">Continental Consulting</p>
+                                <div class="text-xs text-gray-500 space-y-1"><p>Fernando Mazamba – Consultor en Normas ISO</p><p>Concedido en Asunción, el 29 de abril de 2026</p><p>www.continentalconsulting.org</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-gray-50 to-primary-50/30 rounded-2xl p-6 md:p-8 border border-gray-200">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                            <div><h3 class="text-xl font-bold text-gray-900 mb-2">Vista previa del certificado</h3><p class="text-gray-600">Haz clic en la imagen para ampliar</p></div>
+                            <div class="mt-4 md:mt-0"><a href="../NormasISO/Certificados/Implementacion/Implementacion-Esparta-LaRomana.pdf" target="_blank" class="inline-flex items-center bg-esparta-rojo hover:bg-esparta-rojoclaro text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"><i class="fas fa-file-pdf mr-3 text-lg"></i>Descargar PDF</a></div>
+                        </div>
+                        <div class="certificate-card bg-white rounded-xl p-4 shadow-lg border border-gray-200">
+                            <a href="../NormasISO/Certificados/Implementacion/Implementacion-Esparta-LaRomana.png" target="_blank" class="block overflow-hidden rounded-lg"><img src="../NormasISO/Certificados/Implementacion/Implementacion-Esparta-LaRomana.png" alt="Certificado de implementación – La Romana" class="max-w-md mx-auto w-full h-auto rounded-lg"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Beneficios y valores -->
+        <div class="glass-effect rounded-2xl shadow-lg p-6 md:p-8 mb-8 animate-fade-in">
+            <h2 class="text-2xl font-bold text-gray-900 mb-8 text-center">Beneficios de nuestra certificación</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-white to-red-50 rounded-xl p-6 border border-red-100 hover:border-esparta-rojo/30 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-esparta-rojo/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-droplet text-esparta-rojo text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Procesos Estandarizados</h3>
+                    <p class="text-gray-600">Procesos documentados que cubren la atención al donante, la producción de componentes sanguíneos y su despacho.</p>
+                </div>
+                <div class="bg-gradient-to-br from-white to-red-50 rounded-xl p-6 border border-red-100 hover:border-esparta-rojo/30 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-esparta-rojo/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-handshake text-esparta-rojo text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Confianza del Cliente</h3>
+                    <p class="text-gray-600">Garantía de calidad certificada internacionalmente que brinda seguridad a donantes, pacientes y clientes.</p>
+                </div>
+                <div class="bg-gradient-to-br from-white to-red-50 rounded-xl p-6 border border-red-100 hover:border-esparta-rojo/30 transition-all duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-esparta-rojo/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-sync-alt text-esparta-rojo text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Mejora Continua</h3>
+                    <p class="text-gray-600">Sistema de gestión que promueve la mejora sostenida de nuestros procesos y servicios.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie de página informativo -->
+        <div class="header-gradient rounded-2xl shadow-xl p-6 md:p-8 text-white animate-fade-in">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-2">¿Necesitas verificar nuestro certificado?</h3>
+                    <p class="text-red-100">Consulta la validez oficial en el sitio web de SIS Certifications</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="https://siscertifications.com" target="_blank" class="inline-flex items-center justify-center bg-white text-esparta-rojo font-semibold py-3 px-6 rounded-xl hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-shield-alt mr-3"></i>Verificar en SIS Cert
+                    </a>
+                    <a href="https://www.iafcertsearch.org" target="_blank" class="inline-flex items-center justify-center bg-white/10 backdrop-blur-sm text-white font-semibold py-3 px-6 rounded-xl border border-white/20 hover:bg-white/20 transition-colors">
+                        <i class="fas fa-search mr-3"></i>Verificar en IAF CertSearch
+                    </a>
+                </div>
+            </div>
+            <div class="mt-4 pt-4 border-t border-white/10 text-center text-xs text-white/70">
+                <p>Número de Certificado: SIS1171026Q072 | Válido hasta: 14.10.2029</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cambia entre certificados (sede + idioma)
+        function changeCertTab(key) {
+            document.querySelectorAll('.tab-content').forEach(function (tab) { tab.classList.add('hidden'); });
+            document.getElementById('content-' + key).classList.remove('hidden');
+            document.querySelectorAll('.tab-indicator').forEach(function (tab) {
+                tab.classList.remove('active', 'text-esparta-rojo');
+                tab.classList.add('text-gray-700');
+            });
+            document.getElementById('tab-' + key).classList.add('active', 'text-esparta-rojo');
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            changeCertTab('santiago-es');
+            document.querySelectorAll('.certificate-card, .glass-effect').forEach(function (card, index) {
+                card.style.animationDelay = (index * 0.1) + 's';
+            });
+        });
+
+        // Efecto de scroll para el header
+        var lastScroll = 0;
+        var header = document.querySelector('.glass-effect');
+        window.addEventListener('scroll', function () {
+            var currentScroll = window.pageYOffset;
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                header.style.transform = 'translateY(-100%)';
+                header.style.transition = 'transform 0.3s ease';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            lastScroll = currentScroll;
+        });
+    </script>
+</body>
+</html>
